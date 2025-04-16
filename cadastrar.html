@@ -49,9 +49,22 @@
 
     function carregarProdutos(){
       //passar pela lista de produtos
-      for(let contador = 0; contador <= produtos.length - 1; contador++){
+      for(let contador = 0; contador <= (produtos.length - 1); contador++){
         //desenhar uma linha na tabela
-        
+        let produto = produtos[contador]
+        let linha= document.createElement("tr")
+        linha.innerHTML = `<tr>
+          <td>Pizza Muçarela</td>
+          <td>R$ 67.70</td>
+          <td>boa</td>
+          <td>
+            <button>Alterar</button>
+            <button>Excluir</button>
+          </td>
+        </tr>`
+
+        let tbody = document.getElementsByTagName("tbody")[0]
+        tbody.appendChild(linha)
       }
     }
 
